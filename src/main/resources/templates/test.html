@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<script>
+    //
+    let _data = new FormData();
+    // ajax test.html 페이지에서 ajax로 요청함
+    // 페이지를 이동시켜도 되고
+    // 같은 페이지에서 이동하는 방식을 쓰려고 ajax를 쓰는 것이다.
+    // ajax는 jquery에서 쓰고 같은 페이지에서
+    $.ajax({
+        // 어디로 보내야 하는지
+        // 우리 url이 아니라면 https://~~ 이렇게도 쓸수도 있다.
+        // 외부 api쓰려고 쓰는게 ajax다.
+        url: "/api/test" ,
+        // data 보낼수 있음
+        data: _data ,
+        // get , post
+        type: "GET" ,
+        cache : false,
+        //어떻게 보내야하는지
+        contentType : false,
+        processData : false,
+        success: function(data) {
+            alert("success : " + JSON.stringify(data));
+        },
+        error: function(data) {
+            alert("error : " + JSON.stringify(data));
+        },
+        always: function(data) {
+            alert("always : " + JSON.stringify(data));
+        }
+    });
+</script>
+</body>
+</html>
