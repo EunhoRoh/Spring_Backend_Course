@@ -6,6 +6,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 
 //spring 프로젝트 파일인걸 명시해 주는 anno
+// entity가 뭐지?
+// EnableJpaAuditing ?
+//
 @EnableJpaAuditing
 @SpringBootApplication
 public class SpringProjectTest240111Application {

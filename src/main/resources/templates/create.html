@@ -17,6 +17,7 @@
   <input id="create_tbboard_content" name="content"/>
 </div>
 <button onclick="aaa();">작성하기</button>
+<button onclick="aaa2();">수정하기</button>
 
 
 <script>
@@ -32,7 +33,37 @@
     //System.out.println("2222")
     alert(1);
     $.ajax({
-      url: "/api/create",
+      url: "/api/create1",
+      type: "POST",
+      contentType : 'application/json; charset=utf-8',
+      data: JSON.stringify({
+        'title' : $("#create_tbboard_title").val(),
+        'content' : $("#create_tbboard_content").val()
+      }),
+      cache: false,
+      success: (data, status, xhr)=>{
+        alert(JSON.stringify(data));
+      },
+      error: (data)=>{
+      },
+    });
+
+  }
+
+
+  function aaa2(){
+    //
+    // let _data = new FormData();
+    //
+    // _data.append("title", $("#create_tbboard_title").val());
+    // _data.append("content", $("#create_tbboard_content").val());
+    // //alert($("#create_tbboard_title").val());
+    // alert(JSON.stringify(_data));
+    // //return false;
+    //System.out.println("2222")
+    alert(2);
+    $.ajax({
+      url: "/api/update1",
       type: "POST",
       contentType : 'application/json; charset=utf-8',
       data: JSON.stringify({

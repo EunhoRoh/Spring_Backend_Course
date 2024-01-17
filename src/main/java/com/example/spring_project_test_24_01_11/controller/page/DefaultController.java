@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 //페이지를 보여주는 컨트롤러
 @Controller
 public class DefaultController {
+    
+    //swager로 주소 바꾸기
+    @GetMapping("/doc")
+    public String getSwagger() {
+        return "redirect:/swagger-ui/index.html";
+    }
 
     //index 주소 혀용폭 넓히기
     @GetMapping({"", "/", "/index"})
@@ -66,5 +72,7 @@ public class DefaultController {
     public String btest(){
         return "btest";
     }
+
+    //redirect는 다른 url를 내가 원하는 곳으로 바꿔줌
 }
-//templates
+
